@@ -26,7 +26,15 @@ class PRTable(Base):
     def __repr__(self):
         return f"Title('{self.title}', 'Date('{self.date}')"
 
+class Mails(Base):
+    __tablename__ = 'Mails'
+    
+    id = Column(Integer, primary_key=True)
+    mail = Column(String(120))
+
 Base.metadata.bind = engine
 def db_create():
     Base.metadata.create_all()
 
+
+# db_create()
